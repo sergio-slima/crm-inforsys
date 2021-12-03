@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './login.css';
+import './novaconta.css';
 
-function Login() {
+function NovaConta() {
     return <div className="d-flex align-items-center text-center form-container">
         <form className="form-signin">
-            <img className="mb-4" src="Images/logo1.png" alt="" />
-            <h1 className="h3 mb-3 font-weight-normal">Faça Login</h1>
+            <img className="mb-4" src="/Images/logo1.png" alt="" />
+            <h1 className="h3 mb-3 font-weight-normal">Nova Conta</h1>
 
             <div className="form-floating">
                 <input type="email" id="inputEmail" className="form-control" placeholder="E-mail" required autofocus />
@@ -18,11 +18,10 @@ function Login() {
                 <label for="inputPassword">Senha</label>
             </div>
 
-            <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            <button className="btn btn-lg btn-primary btn-block" type="submit">Criar conta</button>
 
             <div className="login-links mt-5">
-                <Link to="/app/resetsenha" className="mx-3">Esqueci minha senha</Link>
-                <Link to="/app/novaconta" className="mx-3">Criar uma conta</Link>
+                <Link to="/app" className="mx-3">Já tenho uma conta.</Link>
             </div>
 
             <p className="mt-5 mb-3 text-muted">&copy; Desenvolvido por Inforsys</p>
@@ -30,4 +29,4 @@ function Login() {
     </div>;
 }
 
-export default Login;
+export default NovaConta;
