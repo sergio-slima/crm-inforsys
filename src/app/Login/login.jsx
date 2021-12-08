@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css';
 
@@ -13,19 +13,19 @@ function Login() {
 
     function LoginUsuario() {
         firebase.auth().signInWithEmailAndPassword(email, senha)
-            .then(function(firebaseUser) {
+            .then((firebaseUser) => {
                 setSucesso('S');
             })
-            .catch(function(error){
+            .catch((error) => {
                 setSucesso('N');
             });
     }
 
     function alterarEmail(event) {
-        setEmail(event.target.value);    
+        setEmail(event.target.value);
     }
     function alterarSenha(event) {
-        setSenha(event.target.value);    
+        setSenha(event.target.value);
     }
 
     return <div className="d-flex align-items-center text-center form-container">

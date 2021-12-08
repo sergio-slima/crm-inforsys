@@ -11,4 +11,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
- export default firebase.initializeApp(firebaseConfig);
+export default firebase.initializeApp(firebaseConfig);
+// firebase: 8.6.5
