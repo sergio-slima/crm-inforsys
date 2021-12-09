@@ -45,9 +45,7 @@ function Login() {
 
             <button onClick={LoginUsuario} className="btn btn-lg btn-primary btn-block" type="button">Login</button>
 
-            {
-                sucesso === 'N' ? <div className="alert alert-danger mt-2" role="alert">E-mail ou senha inválida.</div> : null
-            }
+            {sucesso === 'N' ? <div className="alert alert-danger mt-2" role="alert">E-mail ou senha inválida.</div> : null}
 
             <div className="login-links mt-5">
                 <Link to="/app/resetsenha" className="mx-3">Esqueci minha senha</Link>
