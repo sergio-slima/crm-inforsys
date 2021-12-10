@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './novaconta.css';
 
 import firebase from '../Config/firebase';
@@ -10,6 +10,7 @@ function NovaConta() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [mensagem, setMensagem] = useState('');
+    const [sucesso, setSucesso] = useState('');
 
     function cadastrarUsuario() {
         setMensagem('');
@@ -20,8 +21,10 @@ function NovaConta() {
 
         firebase.auth().createUserWithEmailAndPassword(email, senha)
             .then(resutlado => {
-                setMensagem('Conta cadastrado!')
+                setSucesso('S');
+                setMensagem('OK');
             }).catch(error => {
+                setSucesso('N');
                 setMensagem(error.message);
             });
     }
@@ -44,6 +47,7 @@ function NovaConta() {
             <button onClick={cadastrarUsuario} className="btn btn-lg btn-primary btn-block" type="button">Criar conta</button>
 
             {mensagem.length > 0 ? <div className="alert alert-danger mt-2" role="alert">{mensagem}</div> : null}
+            {sucesso === 'S' ? <Navigate to='/app/home' /> : null}
 
             <div className="login-links mt-5">
                 <Link to="/app" className="mx-3">Já tenho uma conta.</Link>
