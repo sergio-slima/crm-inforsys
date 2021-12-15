@@ -1,27 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './listacliente.css';
-// import clientes from '../../Dados/clientes';
-import firebase from '../../Config/firebase';
 
-function ListaClientes() {
+function ListaClientes(props) {
 
-    const [clientes, setClientes] = useState([]);
-    let listaCli = [];
-
-    useEffect(() => {
-        firebase.firestore().collection('clientes').get()
-            .then(async (resultado) => {
-                await resultado.docs.forEach((doc) => {
-                    listaCli.push({
-                        id: doc.id,
-                        nome: doc.data().nome,
-                        email: doc.data().email,
-                        fone: doc.data().fone
-                    });
-                })
-                setClientes(listaCli);
-            })
-    }, []);
+    function deleteUser(id) {
+        alert('Excluir cliente ' + id);
+    }
 
     return <table className="table table-hover table-bordered">
         <thead>
@@ -30,16 +15,21 @@ function ListaClientes() {
                 <th scope="col">Nome</th>
                 <th scope="col">E-mail</th>
                 <th scope="col">Telefone</th>
+                <th scope="col" className="col-acao"></th>
             </tr>
         </thead>
         <tbody>
             {
-                clientes.map((cliente) => {
+                props.arrayClientes.map((cliente) => {
                     return <tr key={cliente.id}>
                         <th scope="row">{cliente.id}</th>
                         <td>{cliente.nome}</td>
                         <td>{cliente.email}</td>
                         <td>{cliente.fone}</td>
+                        <td>
+                            <Link to='#'><i className="fas fa-edit icone-acao"></i></Link>
+                            <Link to='#' onClick={() => deleteUser(cliente.id)}><i className="far fa-trash-alt icone-acao red"></i></Link>
+                        </td>
                     </tr>
                 })
             }
