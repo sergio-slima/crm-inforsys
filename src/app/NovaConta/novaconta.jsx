@@ -35,13 +35,13 @@ function NovaConta() {
             <h1 className="h3 mb-3 font-weight-normal">Nova Conta</h1>
 
             <div className="form-floating">
-                <input onChange={(e) => setEmail(e.target.value)} type="email" id="inputEmail" className="form-control" placeholder="E-mail" required autofocus />
-                <label for="inputEmail">E-mail</label>
+                <input onChange={(e) => setEmail(e.target.value)} type="email" id="inputEmail" className="form-control" placeholder="E-mail" required />
+                <label htmlFor="inputEmail">E-mail</label>
             </div>
 
             <div className="form-floating">
                 <input onChange={(e) => setSenha(e.target.value)} type="password" id="inputPassword" className="form-control" placeholder="Senha" required />
-                <label for="inputPassword">Senha</label>
+                <label htmlFor="inputPassword">Senha</label>
             </div>
 
             <button onClick={cadastrarUsuario} className="btn btn-lg btn-primary btn-block" type="button">Criar conta</button>

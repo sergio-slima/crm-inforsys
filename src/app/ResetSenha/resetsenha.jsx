@@ -28,8 +28,8 @@ function ResetSenha() {
             <h1 className="h3 mb-3 font-weight-normal">Recuperar Senha</h1>
 
             <div className="form-floating">
-                <input onChange={(e) => setEmail(e.target.value)} type="email" id="inputEmail" className="form-control" placeholder="E-mail" required autofocus />
-                <label for="inputEmail">E-mail</label>
+                <input onChange={(e) => setEmail(e.target.value)} type="email" id="inputEmail" className="form-control" placeholder="E-mail" required />
+                <label htmlFor="inputEmail">E-mail</label>
             </div>
 
             <button onClick={recuperarSenha} className="btn btn-lg btn-primary btn-block mt-3" type="button">Enviar</button>

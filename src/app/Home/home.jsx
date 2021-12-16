@@ -5,15 +5,17 @@ import ListaClientes from '../Components/ListaCliente/listacliente';
 import './home.css';
 
 import firebase from '../Config/firebase';
+import 'firebase/firestore';
 
 function Home() {
 
     const [clientes, setClientes] = useState([]);
     const [busca, setBusca] = useState('');
     const [texto, setTexto] = useState('');
-    let listaCli = [];
 
     useEffect(() => {
+        let listaCli = [];
+
         firebase.firestore().collection('clientes').get()
             .then(async (resultado) => {
                 await resultado.docs.forEach((doc) => {

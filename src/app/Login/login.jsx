@@ -34,13 +34,13 @@ function Login() {
             <h1 className="h3 mb-3 font-weight-normal">Faça Login</h1>
 
             <div className="form-floating">
-                <input onChange={alterarEmail} type="email" id="inputEmail" className="form-control" placeholder="E-mail" required autofocus />
-                <label for="inputEmail">E-mail</label>
+                <input onChange={alterarEmail} type="email" id="inputEmail" className="form-control" placeholder="E-mail" required />
+                <label htmlFor="inputEmail">E-mail</label>
             </div>
 
             <div className="form-floating">
                 <input onChange={alterarSenha} type="password" id="inputPassword" className="form-control" placeholder="Senha" required />
-                <label for="inputPassword">Senha</label>
+                <label htmlFor="inputPassword">Senha</label>
             </div>
 
             <button onClick={LoginUsuario} className="btn btn-lg btn-primary btn-block" type="button">Login</button>
